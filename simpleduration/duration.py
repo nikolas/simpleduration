@@ -77,8 +77,12 @@ class Duration(object):
             self.seconds += parse_single(n, u)
         else:
             if len(n_parts) > 0:
-                # we have a number but no units
-                raise InvalidDuration
+                # we have a number but no units. In this case,
+                # assume the unit is hours.
+                u_parts.append('h')
+                u = ''.join(u_parts)
+                n = ''.join(n_parts)
+                self.seconds += parse_single(n, u)
 
     def timedelta(self):
         return timedelta(seconds=self.seconds)

@@ -18,6 +18,9 @@ SINGLE_TEST_CASES = [
     ("1.5HOURS", 5400),
     ("1.5 HOURS", 5400),
     ("1 day", 3600 * 24),
+    ("13", 3600 * 13),
+    ("1", 3600),
+    ("24", 3600 * 24),
 ]
 
 COMBINED_TEST_CASES = [
@@ -30,9 +33,11 @@ COMBINED_TEST_CASES = [
 ]
 
 INVALID_TEST_CASES = [
+    # TODO: strings like this should be invalid:
+    # "30 40 minutes",
+    # "13 13",
     "1foo",
     "bar",
-    "13",
     "minute1",
 ]
 

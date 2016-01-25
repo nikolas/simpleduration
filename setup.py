@@ -9,6 +9,7 @@ setup(
     description="simple duration parsing library",
     long_description="convert human readable durations to python timedeltas",
     install_requires = [""],
+    tests_require=['nose'],
     scripts = [],
     license = "BSD",
     platforms = ["any"],
